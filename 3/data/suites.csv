@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","235","Авторизация с корректными учетными данными","tests","2026-09-05","passed","2026-09-05","","test_login","",""
+"","273","Авторизация с недействительными учетными данными","tests","2026-09-05","passed","2026-09-05","","test_login","",""
+"","247","Авторизация с корректными учетными данными","tests","2026-09-05","passed","2026-09-05","","test_login","",""
