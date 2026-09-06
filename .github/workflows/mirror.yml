@@ -16,6 +16,7 @@ jobs:
             - name: Push to Gitlab
               env:
                 GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+                GITLAB_PROJECT: ${{ secrets.GITLAB_PROJECT }}
               run: |
-                git remote add gitlab https://oauth2:${GITLAB_TOKEN}@gitlab.com/mcrazerman/my_first_pipeline
+                git remote add gitlab https://oauth2:${GITLAB_TOKEN}@gitlab.com/${GITLAB_PROJECT}.git
                 git push --mirror gitlab
