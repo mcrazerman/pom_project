@@ -1,0 +1,21 @@
+name: Mirror to Gitlab
+
+on:
+    push:
+        branches: ['*']
+        tags: ['*']
+
+jobs:
+    mirror:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v7
+              with:
+                fetch-depth: 0 # скачивание всей истории
+            - name: Push to Gitlab
+              env:
+                GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+              run: |
+                git remote add gitlab https://oauth2:${GITLAB_TOKEN}@gitlab.com/mcrazerman/my_first_pipeline
+                git push --mirror gitlab
